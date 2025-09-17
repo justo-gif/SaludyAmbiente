@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trabajo de Salud y Ambiente</title>
+  <meta name="description" content="Trabajo escolar sobre Estados Unidos: agua, suelo, biodiversidad, causas, consecuencias, políticas, agua virtual, suelo virtual, huella ecológica y Huracán Katrina." />
+  <style>
+    :root{
+      --bg:#0f172a;        /* fondo oscuro azulado */
+      --card:#111827;      /* tarjetas */
+      --muted:#9ca3af;
+      --text:#e5e7eb;
+      --accent:#22d3ee;    /* cian */
+      --accent2:#a78bfa;   /* violeta */
+      --ok:#34d399;
+      --warn:#f59e0b;
+      --bad:#f87171;
+      --maxw:1060px;
+      --radius:18px;
+    }
+    /* Reset mínimo */
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;scroll-behavior:smooth;background:radial-gradient(1200px 600px at 20% -10%, #1e293b 0%, transparent 60%), radial-gradient(1000px 500px at 120% 10%, #172554 0%, transparent 60%), var(--bg); color:var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;}
+    a{color:var(--accent)}
+    header{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(15,23,42,.6);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav{
+      max-width: var(--maxw); margin:0 auto; padding: .6rem 1rem;
+      display:flex; gap:.8rem; align-items:center; flex-wrap:wrap;
+    }
+    .brand{font-weight:700; letter-spacing:.4px}
+    .nav a{
+      text-decoration:none; padding:.5rem .8rem; border-radius:999px; font-size:.95rem;
+      border:1px solid rgba(255,255,255,.08)
+    }
+    .nav a:hover{background: rgba(255,255,255,.06)}
+    .container{max-width:var(--maxw); margin: 2rem auto; padding: 0 1rem 4rem}
+    .hero{
+      display:grid; gap:1rem; grid-template-columns: 1.1fr .9fr; align-items:center;
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+    }
+    .hero h1{
+      font-size: clamp(1.8rem, 2.2vw + 1rem, 2.6rem); margin:.2rem 0 .6rem 0
+    }
+    .tag{display:inline-block; padding:.25rem .6rem; border-radius:999px; border:1px solid rgba(255,255,255,.12); color:var(--muted); font-size:.9rem}
+    .grid{display:grid; gap:1rem; grid-template-columns: repeat(12, 1fr)}
+    .card{
+      grid-column: span 12;
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      padding: 1rem 1.1rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25) inset;
+    }
+    .card h2{margin:.2rem 0 .6rem 0; font-size:1.4rem}
+    .pill{display:inline-block; padding:.18rem .5rem; border-radius:999px; font-size:.8rem; border:1px solid rgba(255,255,255,.12); color:var(--muted); margin:.2rem .3rem .2rem 0}
+    .good{border-color: rgba(52,211,153,.4); color:#a7f3d0}
+    .warn{border-color: rgba(245,158,11,.4); color:#fde68a}
+    .bad{border-color: rgba(248,113,113,.4); color:#fecaca}
+    .cols-2{columns: 2; column-gap: 1.4rem}
+    .note{
+      border-left:4px solid var(--accent); padding:.7rem .9rem; background:rgba(34,211,238,.07);
+      border-radius: 10px; margin:.6rem 0
+    }
+    ul{margin:.4rem 0 .6rem 0; padding-left: 1rem}
+    li{margin:.2rem 0}
+    .mini{
+      font-size:.92rem; color:var(--muted)
+    }
+    figure{
+      margin:.6rem 0; padding:.7rem .9rem; background: rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08); border-radius:14px
+    }
+    figcaption{font-size:.9rem; color:var(--muted); margin-top:.2rem}
+    code{kbd,code}{background:rgba(255,255,255,.06); padding:.15rem .35rem; border-radius:6px}
+    footer{
+      margin-top:2rem; padding:1.2rem; text-align:center; color:var(--muted);
+      border-top:1px solid rgba(255,255,255,.08)
+    }
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero{grid-template-columns: 1fr}
+      .cols-2{columns:1}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <div class="brand">Trabajo de Salud y Ambiente</div>
+      <a href="#inicio">Inicio</a>
+      <a href="#agua">Agua</a>
+      <a href="#suelo">Suelo</a>
+      <a href="#biodiversidad">Biodiversidad</a>
+      <a href="#politicas">Políticas</a>
+      <a href="#huellas">Agua/Suelo virtual & Huella</a>
+      <a href="#katrina">Huracán Katrina</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="inicio" class="hero">
+      <div>
+        <span class="tag">Estados Unidos · Ambiente · Salud</span>
+        <h1>Estados Unidos: agua, suelo y biodiversidad</h1>
+        <p class="mini">Este sitio resume las <strong>problemáticas</strong>, sus <strong>causas y consecuencias</strong>, las principales <strong>políticas estatales</strong> y conceptos claves como <em>agua virtual</em>, <em>suelo virtual</em> y <em>huella ecológica</em>. Además, incluye un caso de estudio: el <strong>Huracán Katrina (2005)</strong>.</p>
+      </div>
+      <figure>
+        <img alt="Paisaje natural y urbano que representa el vínculo entre ambiente y sociedad" src="https://www.esdesignbarcelona.com/sites/default/files/img/paisaje-urbano-que-es-y-principales-caracteristicas-1.jpg" style="width:100%; border-radius:12px" />
+        <figcaption>Ambiente y sociedad: interdependencia entre ecosistemas y actividades humanas.</figcaption>
+      </figure>
+    </section>
+
+    <!-- AGUA -->
+    <section id="agua" class="card">
+      <h2>Agua: problemáticas, causas y consecuencias</h2>
+      <div class="pill warn">Estrés hídrico regional</div>
+      <div class="pill bad">Sobreexplotación de acuíferos</div>
+      <div class="pill warn">Sequías y eventos extremos</div>
+      <div class="pill bad">Contaminación puntual y difusa</div>
+
+      <div class="cols-2">
+        <div>
+          <h3>Causas principales</h3>
+          <ul>
+            <li><strong>Uso intensivo agrícola e industrial</strong> (riego en el Oeste y Suroeste; industrias y energía).</li>
+            <li><strong>Sobreexplotación de acuíferos</strong> en cuencas como High Plains/Ogallala.</li>
+            <li><strong>Contaminación difusa</strong> por nutrientes (nitratos/fosfatos) y pesticidas desde zonas agrícolas.</li>
+            <li><strong>Urbanización</strong> y escorrentía con hidrocarburos, metales y microplásticos.</li>
+            <li><strong>Variabilidad climática y cambio climático</strong> (olas de calor, sequías más prolongadas, lluvias intensas).</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Consecuencias</h3>
+          <ul>
+            <li><strong>Descenso de niveles</strong> de ríos y embalses; pérdida de almacenamiento subterráneo.</li>
+            <li><strong>Zonas muertas</strong> por eutrofización en estuarios (ej. Golfo de México).</li>
+            <li><strong>Conflictos de uso</strong> entre agricultura, ciudades y ecosistemas.</li>
+            <li><strong>Riesgos para la salud</strong> (ej. nitratos altos en agua potable, cianobacterias).</li>
+            <li><strong>Deterioro de humedales</strong> clave para filtración y mitigación de inundaciones.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="note"><strong>Salud pública:</strong> la calidad del agua influye en enfermedades gastrointestinales y respiratorias (aerosoles de cianotoxinas), y en costos sanitarios por tratamiento y potabilización.</div>
+    </section>
+
+    <!-- SUELO -->
+    <section id="suelo" class="card">
+      <h2>Suelo: problemáticas, causas y consecuencias</h2>
+      <div class="pill warn">Erosión hídrica y eólica</div>
+      <div class="pill bad">Sellado por urbanización</div>
+      <div class="pill warn">Contaminación histórica (sitios industriales)</div>
+
+      <div class="cols-2">
+        <div>
+          <h3>Causas principales</h3>
+          <ul>
+            <li><strong>Monocultivos y labranza intensiva</strong> con poca cobertura del suelo.</li>
+            <li><strong>Sobrepastoreo</strong> en zonas áridas/semiáridas.</li>
+            <li><strong>Expansión urbana</strong> y de infraestructura (sellado del suelo).</li>
+            <li><strong>Pasivos ambientales</strong> (minería, vertidos industriales, bases militares).</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Consecuencias</h3>
+          <ul>
+            <li><strong>Pérdida de fertilidad</strong> y materia orgánica, menor productividad.</li>
+            <li><strong>Desertificación local</strong> y tormentas de polvo.</li>
+            <li><strong>Escorrentía y sedimentación</strong> que degradan cuerpos de agua.</li>
+            <li><strong>Riesgos crónicos</strong> por metales pesados y compuestos orgánicos persistentes.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIODIVERSIDAD -->
+    <section id="biodiversidad" class="card">
+      <h2>Biodiversidad: problemáticas, causas y consecuencias</h2>
+      <div class="pill bad">Pérdida y fragmentación de hábitats</div>
+      <div class="pill warn">Especies invasoras</div>
+      <div class="pill warn">Contaminación y cambio climático</div>
+
+      <div class="cols-2">
+        <div>
+          <h3>Causas principales</h3>
+          <ul>
+            <li><strong>Cambio de uso del suelo</strong> (agricultura, urbanización, energía).</li>
+            <li><strong>Sobreexplotación</strong> de recursos (pesca, agua, madera).</li>
+            <li><strong>Contaminación</strong> (nutrientes, plásticos, pesticidas).</li>
+            <li><strong>Clima</strong>: incendios más extensos, eventos extremos.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Consecuencias</h3>
+          <ul>
+            <li><strong>Reducción de servicios ecosistémicos</strong> (polinización, control de plagas, agua limpia).</li>
+            <li><strong>Mayor vulnerabilidad</strong> a enfermedades y plagas.</li>
+            <li><strong>Pérdida de patrimonio natural</strong> y cultural.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- POLÍTICAS -->
+    <section id="politicas" class="card">
+      <h2>Políticas estatales relevantes (EE. UU.)</h2>
+      <ul>
+        <li><strong>Clean Water Act</strong>: regula descargas a cuerpos de agua y fija estándares de calidad.</li>
+        <li><strong>Safe Drinking Water Act</strong>: protege la calidad del agua potable y acuíferos públicos.</li>
+        <li><strong>Clean Air Act</strong>: aunque es de aire, reduce deposición ácida y ozono que afectan suelos y ecosistemas.</li>
+        <li><strong>Endangered Species Act</strong>: conservación de especies en peligro y sus hábitats críticos.</li>
+        <li><strong>National Environmental Policy Act (NEPA)</strong>: evaluación de impacto ambiental para proyectos federales.</li>
+        <li><strong>Farm Bill</strong> (programas de conservación: <em>CRP</em>, <em>CSP</em>): incentivos para prácticas agroecológicas, cobertura vegetal y manejo de nutrientes.</li>
+        <li><strong>Protección de humedales</strong> (sección 404 CWA): permisos para drenajes/rellenos y mitigación.</li>
+        <li><strong>Superfund (CERCLA)</strong>: limpieza de sitios contaminados prioritarios.</li>
+      </ul>
+      <div class="note"><strong>Implementación</strong>: la eficacia depende de presupuestos, monitoreo, cumplimiento y coordinación entre agencias federales, estatales y locales.</div>
+    </section>
+
+    <!-- AGUA VIRTUAL, SUELO VIRTUAL, HUELLA -->
+    <section id="huellas" class="card">
+      <h2>Agua virtual, suelo virtual y huella ecológica</h2>
+      <div class="cols-2">
+        <div>
+          <h3>Agua virtual</h3>
+          <p>Cantidad de <strong>agua utilizada a lo largo de la cadena</strong> para producir un bien o servicio. EE. UU. tiene altos flujos de agua virtual asociados a cultivos de riego (p. ej., algodón, alfalfa, frutos, maíz en regiones áridas).</p>
+
+          <h3>Suelo virtual</h3>
+          <p>Superficie de <strong>tierra requerida (local o externa)</strong> para sostener el consumo. Se expresa como “hectáreas necesarias” considerando rendimientos. El comercio exterior traslada demanda de suelo hacia otros países.</p>
+
+          <h3>Huella ecológica</h3>
+          <p>Indicador que estima la <strong>demanda de recursos</strong> y la capacidad del planeta para regenerarlos (<em>biocapacidad</em>). Incluye alimentación, vivienda, energía, transporte y bienes. EE. UU. presenta una huella per cápita elevada en comparación con el promedio mundial.</p>
+        </div>
+        <div>
+          <figure>
+            <img alt="Esquema conceptual de agua y suelo virtual y huella ecológica" src="https://actualiagrupo.com/wp-content/uploads/2017/07/imagen-huella-ecologica.jpg" style="width:100%; border-radius:12px" />
+            <figcaption>Los consumos cotidianos esconden flujos “virtuales” de agua y suelo.</figcaption>
+          </figure>
+          <ul>
+            <li><span class="pill good">Oportunidad</span> para <strong>gestión eficiente</strong> (riego tecnificado, cultivos menos sedientos).</li>
+            <li><span class="pill bad">Riesgo</span> de <strong>externalizar impactos</strong> a otras regiones vía importaciones.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- HURACÁN KATRINA -->
+    <section id="katrina" class="card">
+      <h2>Huracán Katrina (2005): causas e impactos ambientales</h2>
+      <div class="cols-2">
+        <div>
+          <h3>Causas meteorológicas</h3>
+          <ul>
+            <li><strong>Aguas muy cálidas</strong> del Golfo de México que alimentaron la tormenta.</li>
+            <li><strong>Baja cizalladura del viento</strong> que permitió su intensificación.</li>
+            <li><strong>Trayectoria</strong> que impactó directamente Luisiana, Misisipi y Alabama.</li>
+          </ul>
+          <h3>Factores de vulnerabilidad</h3>
+          <ul>
+            <li><strong>Hundimiento y pérdida de humedales</strong> costeros que actuaban como barrera natural.</li>
+            <li><strong>Sistemas de diques</strong> y defensas con fallas estructurales en Nueva Orleans.</li>
+            <li><strong>Expansión urbana</strong> en zonas de riesgo de inundación.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Impactos ambientales y en la salud</h3>
+          <ul>
+            <li><strong>Inundaciones masivas</strong> con aguas contaminadas (combustibles, metales, aguas residuales).</li>
+            <li><strong>Derrames</strong> de petróleo y químicos en instalaciones industriales.</li>
+            <li><strong>Daño a humedales</strong> y ecosistemas costeros; cambios en la salinidad.</li>
+            <li><strong>Residuos y escombros</strong> de gran volumen; proliferación de mohos en viviendas.</li>
+            <li><strong>Riesgos sanitarios</strong>: infecciones, problemas respiratorios, estrés térmico y mental.</li>
+          </ul>
+          <div class="note">Lección clave: la <strong>infraestructura verde</strong> (humedales, marismas) y el <strong>mantenimiento de diques</strong> son esenciales para reducir daños futuros.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSIONES -->
+    <section class="card">
+      <h2>Conclusiones</h2>
+      <ul>
+        <li>Las presiones sobre <strong>agua, suelo y biodiversidad</strong> están conectadas por el modelo productivo, la urbanización y el clima.</li>
+        <li>Las <strong>políticas</strong> existen y son robustas, pero su eficacia depende del <strong>cumplimiento, monitoreo</strong> y la <strong>planificación territorial</strong>.</li>
+        <li>Medir <strong>agua/suelo virtual</strong> y la <strong>huella ecológica</strong> ayuda a orientar consumos y comercio hacia la sostenibilidad.</li>
+        <li>Eventos extremos como <strong>Katrina</strong> exponen vulnerabilidades acumuladas y la necesidad de adaptación basada en ecosistemas.</li>
+      </ul>
+    </section>
+
+    <footer>
+      Trabajo de Salud y Ambiente · Estados Unidos · Hecho para la escuela </br> By Justo Francesconi
+    </footer>
+  </main>
+</body>
+</html>
